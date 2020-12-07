@@ -1,0 +1,29 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#experience_input_form {
+border: 2px solid red;
+padding: 5px;
+margin: 5px;
+}
+
+#mainPage{
+border: 2px solid red;
+padding: 5px;
+margin: 5px;
+}
+ 
+#loginDIV {
+border: 2px solid red;
+padding: 5px;
+margin: 5px;
+}
+
+#experience_output_div{
+  border: 2px solid green;
+  padding: 5px;
+  margin: 5px;
+}
+

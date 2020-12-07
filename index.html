@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Experience IIT BBS</title>
+</head>
+<body>
+   
+  <h><b>iitbbs-placement-internship-experience-portal</b></h>
+
+    <div id="loginDIV">
+        <div id="mailDIV">
+          Enter your mail id <input type="mailId" id="mailId" required>
+          <button onclick="check_mail_and_send_OTP_fun()">Send OTP</button>
+        </div>
+        <div id="otpDIV">
+          Enter the OTP <input type="text" id="otp" required>
+          <button onclick="checkOTP()">login</button>
+        </div>       
+        <div id="result"></div>
+    </div>
+  
+      <div id="mainPage">
+        <button onclick="loadAllDataInternship()">Read Internship</button>
+        <button>write</button> <br> 
+        <button onclick="loadAllDataPlacement()">Read Placement</button>
+        <button>write</button>   
+
+      </div>
+  
+      <div id="experience_input_form">
+         <h>Form</h>
+         <div class="experience">
+      <form id="experience">
+      <p class="full">
+        <label>Name</label>
+        <input type="text" name="name" id="name" required>
+      </p>
+   
+      <p class="full">
+        <label>Email Address</label>
+        <input type="email" name="email" id="mail" required>
+      </p>
+      <p class="full">
+        <label>CGPA</label>
+        <input type="text" name="cgpa" id="cgpa" required>
+      </p>
+  
+      <p>Intership/Placement</p>
+      <input type="radio" id="internship" name="type" value="internship" required>
+      <label for="internship">Internship</label><br>
+      <input type="radio" id="placement" name="type" value="placement" required>
+      <label for="placement">Placement</label><br> 
+    
+  
+      <p class="full">
+          <label>Profile offered</label>
+          <input type="text" name="Profile" id="Profile" required>
+        </p>
+        <p class="full">
+          <label>Company placed in</label>
+          <input type="text" name="Company" id="Company" required>
+        </p>
+  
+        <p class="full">
+          <label>Placement/Internship procedure</label>
+          <textarea name="Placement" rows="5" id="procedure" required></textarea>
+        </p>
+        <p class="full">
+          <label>Online test</label>
+          <input type="text" name="online_test" id="online_test" required>
+        </p>
+        
+  
+      <p class="full">
+        <label>interview experience</label>
+        <textarea name="interview_experience" rows="5" id="interview_experience" required></textarea>
+      </p>
+      <p class="full">
+          <label>topics concentrated</label>
+          <textarea name="topics_concentrated" rows="5" id="topics_concentrated" required></textarea>
+        </p>
+        <p class="full">
+          <label>suggestions to juniors</label>
+          <textarea name="suggestions to juniors" rows="5" id="suggestions" required></textarea>
+        </p>
+        <p class="full">
+          <label>Linkedin </label>
+          <input type="text" name="Linkedin" id="LinkedinURL" required>
+        </p>
+         <p class="full">
+          <label>Contact number </label>
+          <input type="text" name="mobile number" id="contactNumber" >
+        </p>
+        
+      <p class="full">
+        <button id="submit_exp" type="submit" onclick="submit_experience()">SUBMIT</button>
+      </p>
+       </form> 
+  
+      </div>
+    </div>
+  
+  
+  
+      <div id="experience_output_div"> responces
+      </div>
+
+      
+ 
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
