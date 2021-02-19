@@ -1,123 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Experience IIT BBS</title>
-</head>
-<body>
-   
-  <h><b>iitbbs-placement-internship-experience-portal</b></h>
+<html>
+  <head>
+    <title>IIT BBS PLACEMENT AND INTERNSHIP EXPERIENCE</title>
 
-    <div id="loginDIV">
-        <div id="mailDIV">
-          Enter your mail id <input type="mailId" id="mailId" required>
-          <button onclick="check_mail_and_send_OTP_fun()">Send OTP</button>
-        </div>
-        <div id="otpDIV">
-          Enter the OTP <input type="text" id="otp" required>
-          <button onclick="checkOTP()">login</button>
-        </div>       
-        <div id="result"></div>
-    </div>
-  
-      <div id="mainPage">
-        <button onclick="loadAllDataInternship()">Read Internship</button>
-        <button>write</button> <br> 
-        <button onclick="loadAllDataPlacement()">Read Placement</button>
-        <button>write</button>   
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+      
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+      </style> 
+  </head>
+  <body>
+    <div id="header">
+      <div id="bigheading">
+        <p id="mainHeading">IIT BBS Placement and Internship Experience Sharing Portal </p>  
       </div>
-  
-      <div id="experience_input_form">
-         <h>Form</h>
-         <div class="experience">
-      <form id="experience">
-      <p class="full">
-        <label>Name</label>
-        <input type="text" name="name" id="name" required>
-      </p>
-   
-      <p class="full">
-        <label>Email Address</label>
-        <input type="email" name="email" id="mail" required>
-      </p>
-      <p class="full">
-        <label>CGPA</label>
-        <input type="text" name="cgpa" id="cgpa" required>
-      </p>
-  
-      <p>Intership/Placement</p>
-      <input type="radio" id="internship" name="type" value="internship" required>
-      <label for="internship">Internship</label><br>
-      <input type="radio" id="placement" name="type" value="placement" required>
-      <label for="placement">Placement</label><br> 
+      <div id="smallheading">
+        <p id="submainHeading">IIT BBS Placement and Internship Experience Sharing Portal </p>  
+        <button id="homeBTN" onclick="goHome()">Home</button>
+        <span id="submainResults">IIT BBS Placement and Internship Experience Sharing Portal </span>  
+      </div>
+      
+    </div>
+    <div id="loader">      
+      <div class="sk-chase" id="loaderAnime">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>      
+    </div>
+    <div id="fakeheader">
+      <p id="mainHeading">IIT BBS Placement and Internship Experience Sharing Portal </p>          
+    </div>
     
-  
-      <p class="full">
-          <label>Profile offered</label>
-          <input type="text" name="Profile" id="Profile" required>
-        </p>
-        <p class="full">
-          <label>Company placed in</label>
-          <input type="text" name="Company" id="Company" required>
-        </p>
-  
-        <p class="full">
-          <label>Placement/Internship procedure</label>
-          <textarea name="Placement" rows="5" id="procedure" required></textarea>
-        </p>
-        <p class="full">
-          <label>Online test</label>
-          <input type="text" name="online_test" id="online_test" required>
-        </p>
+    <!-- <div id="intermediateStatusBar">
+      Welcome
+    </div> -->
+   
+    <!-- login part  -->
+    <div class="main-block" id="mailLoginBlock">
+                      
+      <div class="form">
+        <hr>
+        <div class="account-type">
+          <h1>Sign-in</h1>    
+        </div>
+        <hr>  
+        <div class="account-type">
+          Welcome to <br>IIT BBS Placement and Internship experience sharing portal
+          <br>
+          <br>
+          <div class="account-type" id="loginResultId">
+            Enter your IIT BBS mail to sign in
+          </div>          
+        </div>    
+        <hr>  
+        <!-- <input type="text" name="name" id="email" placeholder="IIT BBS mail" required/>  -->
+        <div id="mailBlock">
+          <label id="icon" for="name" class="added"><i class="fas fa-envelope-square"></i></label>
+          <input type="text" name="name" id="mailId" placeholder="mail" required/>
+        </div> 
         
-  
-      <p class="full">
-        <label>interview experience</label>
-        <textarea name="interview_experience" rows="5" id="interview_experience" required></textarea>
-      </p>
-      <p class="full">
-          <label>topics concentrated</label>
-          <textarea name="topics_concentrated" rows="5" id="topics_concentrated" required></textarea>
-        </p>
-        <p class="full">
-          <label>suggestions to juniors</label>
-          <textarea name="suggestions to juniors" rows="5" id="suggestions" required></textarea>
-        </p>
-        <p class="full">
-          <label>Linkedin </label>
-          <input type="text" name="Linkedin" id="LinkedinURL" required>
-        </p>
-         <p class="full">
-          <label>Contact number </label>
-          <input type="text" name="mobile number" id="contactNumber" >
-        </p>
+        <div id="otpBlock">
+            <label id="icon" for="name" class="added"><i class="fas fa-unlock-alt"></i></label>
+            <input type="text" name="otp" id="otp" placeholder="OTP" required/>
+        </div>        
         
-      <p class="full">
-        <button id="submit_exp" type="submit" onclick="submit_experience()">SUBMIT</button>
-      </p>
-       </form> 
-  
+        
+        <hr>        
+        <div class="btn-block" id="mailSubmitBtnId">          
+          <button class="loginbtnclass" onclick="check_mail_and_send_OTP_fun()">Sent OTP</button>
+        </div>
+        <div class="btn-block" id="otpSubmitBtnId">          
+          <button class="loginbtnclass" onclick="checkOTP()">Submit OTP</button>
+        </div>
+        <hr>
+        <p>This is portal only for IIT BBS Students</p>
       </div>
     </div>
-  
-  
-  
-      <div id="experience_output_div"> responces
+    <!-- main menu  -->
+
+    <div class="main-block" id="main-menu">
+      <h1>Home</h1>
+      <div class="form">      
+        <hr>
+        <div class="account-type">
+          Welcome to <br>IIT BBS PLACEMENT AND INTERNSHIP PORTAL
+        </div>
+        <hr>
+        <div class="btn-block" id="mailSubmitBtnId1">          
+          <button type="submit" onclick="writeExperience()">Write Internship or Placement Experience</button>
+        </div>             
+        <hr>
+        <div class="btn-block" id="mailSubmitBtnId2">          
+          <button type="submit" onclick="loadAllDataInternship()">Read Internship Experience</button>
+        </div>             
+        <hr>
+        <div class="btn-block" id="mailSubmitBtnId3">          
+          <button type="submit" onclick="loadAllDataPlacement()">Read Placement Experience</button>
+        </div>             
+        <hr>              
+        <!-- <p>By clicking Register, you agree on our Privacy Policy for W3Docs.</p> -->
       </div>
+    </div>
+     
+    <!-- experience form html  -->
+    <div id="expform">
+      <div class="testbox">
+        
+          <div class="banner">
+            <h1>Example Form for reference</h1>
+          </div>
+          <hr>
+          <div id="referenceForm">
+            <p class="top-info">This a just a reference form. Go through it once and then fill the form.</p>
+            
+            <div class="class">
+              <input class="inputClass" type="text" name="mail" placeholder="Mail - cas10@iitbbs.ac.in"/>
+            </div>
+            <div class="item">
+              <div class="name-item">
+                <input class="inputClass" type="text" name="name" placeholder="Name"/>            
+              </div>
+            </div>
+            <div class="label">
+              <div class="question-answer">
+                <label><input type="radio" value="none" checked="true" name="gender" required/> <span>Placement</span></label>
+                <br><br>
+                <label><input type="radio" value="none" name="gender" required/> <span>Internship</span></label>
+              </div>
+            </div>
+            <div class="item">
+              <input class="inputClass" type="text" name="name" placeholder="Branch - Computer science" required/>
+            </div>
+            <div class="item">
+              <input class="inputClass" type="text" name="name" placeholder="CGPA - 8.00" required/>
+            </div>
+            <div class="item">
+              <input class="inputClass" type="text" name="graduationYear" placeholder="Year of Graduation - 2020" required/>
+            </div>
+            <div class="item">  
+              <input class="inputClass" type="text" name="name" placeholder="Company - Amazon" required/>
+            </div> 
+            <div class="item">
+              <input class="inputClass" type="text" name="name" placeholder="Profile - SDE (Software development engineer)" required/>
+            </div>                 
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="4" cols="100%" placeholder="Procedure -
+On-Campus through CDC. Online Test followed by two interviews. The number of interviews rounds was different for each candidate.(offline mode)" required></textarea>
+            </div>
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="5" cols="100%" placeholder="Online test pattern -
+The online test had 3 coding questions and 12 MCQs where the MCQs were concentrated on DBMS, Aptitude and some basic output questions" required></textarea>
+            </div>            
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="10" cols="100%" placeholder="Interveiw Experience - 
+There were 2 rounds, a Tech PI and HR round. Round 1(Technical Interview): In the starting of technical interview, I was asked to explain my resume and after which I was asked 4 following questions: 1) Given an integer, find the nearest square number to the given integer and I was asked to write the code for it. 2) Merge sort explanation and it's code 3) Find the maximum consecutive occurrence of any character in a given string. After answering these questions, I was asked about some basics about Java which is my preferred language and some questions on HashSet, hashmap and OOPS concepts Round 2(HR Interview): After the technical interview, I had an HR Interview where I was asked some basic HR questions such as where do I see myself in 5 years, about my family background, what if not engineering, what keeps me grounded motivated, etc" required></textarea>
+            </div>
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="5" cols="100%" placeholder="Links to questions  or related sites -:
+https://www.geeksforgeeks.org/quick-sort/
+https://practice.geeksforgeeks.org/problems/check-for-bst/1
+https://www.geeksforgeeks.org/" id="experience" required></textarea>
+            </div>
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="5" cols="100%" placeholder="Topics Concentrated On - 
+Data Structure and Algorithm, Operating System, Database Management, probability and statistics, Puzzles, OOPs, Core concept of java and python " required></textarea>
+            </div>
+            <div class="item">          
+              <textarea class="textarea inputClass" name="Placement" rows="7" cols="100%" placeholder="Suggestion to the Juniors -
+1.  well prepare with coding and standard computer science topics (Data structure and algorithm, OOPs, Database Management ), puzzles, probability.
+2. Practice writing code in a simple text editor or in the paper . In the interview, you will write your code in a similar environment without syntax highlighting or auto-completion. Always try to add a diagram when you are solving as it helps you to express your thinking process.
+3.  Start practicing coding in online platforms like  Hackerrank, GeeksforGeek(Must do questions), interviewbit .  Do participate in online competitions like LeetCode weekly contest, 
+Codechef competitions. It really helps you out during the online test. " required></textarea>
+            </div>
+            <div class="item">         
+              <input class="inputClass" type="text" name="name" placeholder="Link to your resume (Google drive or any link with access for IITBBS students to veiw)" required/>
+            </div>
+            <div class="item">         
+              <input class="inputClass" type="text" name="name" placeholder="LinkedIn Url (Your LinkedIn Profile url)" required/>
+            </div>
+            <div class="item">          
+              <input class="inputClass" type="text" name="name" placeholder="Contact Number (Optional)"/>
+            </div>        
+            <!-- <div class="btn-block">
+              <button type="submit" href="/">Apply</button>
+            </div> -->
+          </div>        
+      </div>
+      <hr>
+      
+      <div class="testbox">
+        <!-- <form id="formid"> -->
+          <div class="banner">
+            <h1>Experience form<h1>
+          </div>
+          <hr>
+          <div id="actualForm">
+          <p class="top-info">Want to become a member of our Gym? Then start by filling our form to complete registration. We will contact you shortly to notify you about your membership card.</p>
+            
+          <div class="class">
+            <input class="inputClass" type="text" name="mail" id="mailInFormId" placeholder="Mail"/>
+          </div>
+          <div class="item">
+            <div class="name-item">
+              <input type="text" name="name" placeholder="Name" id="nameFormId" required/>            
+            </div>
+          </div>
+          <div class="label">
+            <div class="question-answer">
+              <label><input type="radio" value="placement" name="type" required/> <span class="typeclass">Placement</span></label>
+              <br><br>
+              <label><input type="radio" value="internship" name="type" required/> <span class="typeclass">Internship</span></label>
+            </div>
+          </div>          
+          <div class="item">
+            <input type="text" name="name" placeholder="Branch" id="branchFormId" required/>
+          </div>
+          <div class="item">
+            <input type="text" name="CGPA" placeholder="CGPA" id="cgpaFormId" required/>
+          </div>
+          <div class="item">
+            <input type="text" name="graduationYear" placeholder="Year of Graduation" id="graduationYear" required/>
+          </div>
+          <div class="item">  
+            <input type="text" name="Company" placeholder="Company Placed in" id="companyFormId" required/>
+          </div>
+          <div class="item">
+            <input type="text" name="Profile" placeholder="Profile Offered" id="profileFormId" required/>
+          </div>                  
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="4" cols="100%" placeholder="Procedure" id="procedureFormId" required></textarea>
+          </div>
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="5" cols="100%" placeholder="Online test pattern and kind of questions asked" id="onlineTestFormId" required></textarea>
+          </div>          
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="10" cols="100%" placeholder="Interveiw Experience" id="interveiwExpFormId" required></textarea>
+          </div>
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="10" cols="100%" placeholder="Links to questions or related sites" id="linksFormId" required></textarea>
+          </div>
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="5" cols="100%" placeholder="Topics Concentrated On" id="topicsConcentratedFormId" required></textarea>
+          </div>
+          <div class="item">          
+            <textarea class="textarea" name="Placement" rows="5" cols="100%" placeholder="Suggestion to the Juniors" id="suggestionsFormId" required></textarea>
+          </div>
+          <div class="item">         
+            <input type="text" name="name" placeholder="Link to your Resume" id="ResumeURLFormId" required/>
+          </div>
+          <div class="item">         
+            <input type="text" name="name" placeholder="LinkedIn Url" id="linkedinURLFormId" required/>
+          </div>
+          <div class="item">          
+            <input type="text" name="name" placeholder="Contact Number (Optional)" id="contactNumberFormId"/>
+          </div>        
+          <div class="btn-block">
+            <button type="submit" onclick="addExperience()">Apply</button>
+          </div>
+        </div>
+      <!-- </form> -->
+      </div>
+    </div>
+        
+
+    <!-- results form in   html -->
+    <div id="results">
 
       
- 
 
+      <!-- <div class="actualResult">        
+        <div class="oneShow">
+          <p class="show1">Intern at Amazon</p>
+          <p class="show1">Role : SDE ROLE</p>
+          <p class="show1">Sree vidhya</p>    
 
+          <span class="show3">Electrical </span>
+          <span class="show3"> 8.04</span>
+          <span class="show3"> 2021 graduate</span>
+
+          
+          <p class="show2"><b>Procedure : </b><br></p>
+          <p class="show2"><b>Online test :</b><br></p>
+          <p class="show2"><b>Interveiw Experience :</b><br></p>
+          
+          <div class="show2"> 
+            <b>Related links</b><br>        
+            <a href=""><button class="questionLinkbtn">url here</button></a>
+          </div>
+
+          <p class="show2"><b>Topics Concentrated on :</b><br></p>
+          <p class="show2"><b>Suggestion to juniors :</b><br></p>          
+      
+           <span class="show4">
+            <a href=""><button class="questionLinkbtn">Mail Id</button> </a>
+            <a href=""><button class="questionLinkbtn">Contact Number</button></a> 
+            <a href=""><button class="questionLinkbtn">LinkedIn URL</button> </a>
+            <a href=""><button class="questionLinkbtn">Link to resume</button> </a>
+           </span>                                              
+          
+        </div>          
+      </div>
+
+        -->
+
+    </div>
+
+    <div id="experienceFormResult">
+      <p id="expsubmittedid">Your response has been recorded<br><br>Thanks for filling the response :)</p>
+    </div>
+
+    
+</body>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script src="script.js"></script>
-
-
-</body>
+  <script src="script.js"></script>
 </html>
